@@ -11,7 +11,7 @@ public class SenderThread implements Runnable {
 		this.pw = pw;
 	}
 
-	// thread Sender
+	// Sender thread 
 	public void run() {
 		flag = true;
 		while (flag) {
@@ -34,9 +34,9 @@ public class SenderThread implements Runnable {
 
 	}
 
-	// thread chiamante
+	// Caller thread
 	public void stop() {
-		//chiusura del pw delegata al chiamante
+		// Closing pw handled by caller
 		flag = false;
 		pw.println("0");
 		pw.flush();
