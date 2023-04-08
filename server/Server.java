@@ -22,21 +22,21 @@ public class Server implements Runnable {
 	public void run() {
 
 		try {
-			// attendo nuove connessioni
+			// Waiting for new connection
 			lis = new ServerSocket(port);
 		} catch (IOException e1) {
 			e1.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Errore nella creazione del ServerSocket, applicazione dismessa", null,
+			JOptionPane.showMessageDialog(null, "Something went wrong while creating ServerSocket, application dismissed", null,
 					0);
 			System.exit(1);
 		}
-		System.out.println("Server avviato");
+		System.out.println("Server running");
 		Socket sock = null;
 		running = true;
 
 		while (running) {
 			try {
-				// accetto nuove connessioni
+				// Accept new connection
 				sock = lis.accept();
 			} catch (IOException e) {
 				break;
