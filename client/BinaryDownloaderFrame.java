@@ -35,7 +35,7 @@ public class BinaryDownloaderFrame extends JFrame {
 		
 		// Layout
 		central11 = new JPanel(new BorderLayout());
-		central11.add(new JLabel("Matricola"), BorderLayout.NORTH);
+		central11.add(new JLabel("Serial"), BorderLayout.NORTH);
 		central11.add(matricolaText, BorderLayout.SOUTH);
 				
 		central12 = new JPanel(new BorderLayout());
@@ -43,7 +43,7 @@ public class BinaryDownloaderFrame extends JFrame {
 		central12.add(addressText, BorderLayout.SOUTH);
 		
 		central21 = new JPanel(new BorderLayout());
-		central21.add(new JLabel("Porta"), BorderLayout.NORTH);
+		central21.add(new JLabel("Port"), BorderLayout.NORTH);
 		central21.add(new JPanel().add(portaText), BorderLayout.SOUTH);
 
 		centralPanel = new JPanel(new GridLayout(2, 2));
