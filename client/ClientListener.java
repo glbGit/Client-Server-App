@@ -53,17 +53,17 @@ public class ClientListener implements ActionListener {
 				connected = true;
 				System.out.println("Connected");
 			} catch (IOException e1) {
-				JOptionPane.showMessageDialog(null, "Impossibile connettersi al server: \n" + e1.getMessage());
+				JOptionPane.showMessageDialog(null, "Cannot connect to server: \n" + e1.getMessage());
 				e1.printStackTrace();
 				return;
 			}
 
-			JOptionPane.showMessageDialog(null, "Connessione stabilita");
+			JOptionPane.showMessageDialog(null, "Connected to server. ");
 		} else if (cmd.equals(ClientListener.START)) {
 			try {
 				downloader = new Downloader(matricolaField.getText(), scan);
 			} catch (IOException e1) {
-				JOptionPane.showMessageDialog(null, "Impossibile creare il file: \n" + e1.getMessage());
+				JOptionPane.showMessageDialog(null, "Failed to create file: \n" + e1.getMessage());
 				e1.printStackTrace();
 			}
 			transmitting = true;
@@ -72,12 +72,12 @@ public class ClientListener implements ActionListener {
 
 			Thread t = new Thread(downloader);
 			t.start();
-			JOptionPane.showMessageDialog(null, "Download avviato");
+			JOptionPane.showMessageDialog(null, "Downloading... ");
 		} else if (cmd.equals(ClientListener.STOP)) {
 			netPw.println(cmd);
 			netPw.flush();
 			transmitting = false;
-			JOptionPane.showMessageDialog(null, "Download fermato");
+			JOptionPane.showMessageDialog(null, "Download paused. ");
 		} else if (cmd.equals(ClientListener.DISCONNECT)) {
 			netPw.println(ClientListener.DISCONNECT);
 			netPw.flush();
@@ -90,7 +90,7 @@ public class ClientListener implements ActionListener {
 				e1.printStackTrace();
 			}
 
-			JOptionPane.showMessageDialog(null, "Connessione chiusa");
+			JOptionPane.showMessageDialog(null, "Disconnected. ");
 		}
 		frame.setButtons(connected, transmitting);
 	}
