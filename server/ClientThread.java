@@ -36,7 +36,7 @@ public class ClientThread implements Runnable {
 			String cmd = in.nextLine();
 			System.out.println(cmd);
 			if (cmd.equals("start")) {
-				//Avvio nuovo thread per invio di 01
+				// Start a new thread to send 01
 				st = new SenderThread(pw);
 				Thread t = new Thread(st);
 				t.start();
