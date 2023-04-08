@@ -70,7 +70,7 @@ public class GUIMain extends JFrame implements ActionListener {
 			try {
 				serv = new Server(portTxt.getText());
 			} catch (NumberFormatException ex) {
-				JOptionPane.showMessageDialog(this, "Formato porta errato", "Errore", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this, "Wrong port format", "Error", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			Thread avv = new Thread(serv);
